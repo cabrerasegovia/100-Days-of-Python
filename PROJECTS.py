@@ -18,7 +18,38 @@ split = (total_bill*(1+(tip_percentage/100)))/people
 split_bill = "{:.2f}".format(split)
 print(f"Each person should pay : ${split_bill}")
 
-#PROJECT 3: TREASURE ISLAND GAME
+#PROJECT3: LOVE CALCULATOR
+print("The Love Calculator is calculating your score...")
+name1 = input() # What is your name?
+name2 = input() # What is their name?
+
+# code below this line 👇
+name_together = name1 + name2
+name_low= name_together.lower()
+
+t= name_low.count("t")
+r = name_low.count("r")
+u = name_low.count("u")
+e = name_low.count("e")
+true= t+r+u+e
+l = name_low.count("l")
+o = name_low.count("o")
+v = name_low.count("v")
+e = name_low.count("e")
+
+love= l+o+v+e
+st= str((true))
+st2=str((love))
+truelove = int(st + st2)
+
+if int(truelove) < 10 or int(truelove) > 90:
+  print(f"Your score is {truelove}, you go together like coke and mentos.")
+elif int(truelove) >= 40 and int(truelove) <= 50:
+  print(f"Your score is {truelove}, you are alright together.")
+else:
+  print(f"Your score is {truelove}.")
+
+#PROJECT 4: TREASURE ISLAND GAME
 print('''
   *******************************************************************************
                |                   |                  |                     |
@@ -75,6 +106,61 @@ if lower_q1 == 'left':
 else:
   print("Game Over, try again")
 
+#PROJECT 5: ROCK, PAPER, SCISSORS
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#code below this line 👇
+import random
+userchoice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. \n"))
+if userchoice == 0:
+  print(rock)
+elif userchoice == 1:
+  print(paper)
+else:
+  print(scissors)
+
+print("Computer chose:")
+computerchoice = random.randint(0,2)
+choice = [rock,paper,scissors]
+print(choice[computerchoice])
+if userchoice >= 3 or userchoice < 0:
+  print("You typed an invalid number, you lose!")
+elif userchoice ==0 and computerchoice == 2:
+  print("You win")
+elif computerchoice ==0 and userchoice == 2:
+  print(" You lose")
+  #THIS IS THE MAIN CONDIITON
+elif computerchoice > userchoice:
+  print("You lose")
+elif userchoice > computerchoice:
+  print("You win")
+elif userchoice == computerchoice:
+  print("It is a tie")
 
         
 
